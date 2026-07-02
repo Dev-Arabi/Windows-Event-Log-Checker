@@ -326,19 +326,7 @@ Planned future improvements include:
 
 ---
 
-# 🤝 Contributing
 
-Contributions are welcome.
-
-If you discover a bug, have an improvement, or would like to add new forensic capabilities, feel free to open an Issue or submit a Pull Request.
-
----
-
-# 📄 License
-
-This project is licensed under the **MIT License**.
-
-See the `LICENSE` file for details.
 
 ---
 
@@ -352,7 +340,7 @@ The author assumes **no responsibility or liability** for any misuse, damage, or
 
 # 👨‍💻 Author
 
-**MR. X Gaming**
+**Dev-Arabi**
 
 Digital Forensics • Incident Response • Windows Internals • PowerShell
 
