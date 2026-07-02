@@ -702,15 +702,13 @@ If you find bugs or have feature requests, feel free to open an Issue or submit 
 
 ---
 
-# License
 
-MIT License
 
 ---
 
 # Author
 
-**MR. X Gaming**
+**Dev-Arabi**
 
 Digital Forensics • Incident Response • Windows Internals • PowerShell
 
