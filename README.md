@@ -1,535 +1,368 @@
 # 🛡️ Windows Forensic Triage & Evidence Collection Toolkit
 
-<div align="center">
+<p align="center">
 
-![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge\&logo=powershell\&logoColor=white)
-![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011%20%7C%20Server-blue?style=for-the-badge\&logo=windows)
-![License](https://img.shields.io/badge/License-Forensic%20Use-success?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Windows-important?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)
+![DFIR](https://img.shields.io/badge/DFIR-Incident%20Response-red?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-v1.4.0-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-### 🔍 Professional Digital Forensics • Incident Response • Security Auditing
-
-*A professional single-file PowerShell toolkit designed for Windows forensic triage, evidence preservation, and incident response.*
+</p>
 
 ---
 
-</div>
+## Overview
 
-> ⚠️ **Legal Notice**
->
-> This toolkit is intended **ONLY** for systems that you own or are explicitly authorized to examine.
->
-> The script operates in **read-only mode**, making **no modifications** to the target system other than creating its own output directory, log files, evidence package, and optional ZIP archive.
+**Windows Forensic Triage & Evidence Collection Toolkit** is a professional **PowerShell-based Digital Forensics & Incident Response (DFIR)** toolkit designed to perform **read-only forensic triage** on Windows systems.
 
----
+The toolkit rapidly collects volatile and non-volatile artifacts, builds forensic timelines, preserves evidence integrity, and exports structured results for later investigation.
 
-# ✨ Features
+Designed for:
 
-✅ Read-only forensic collection
-
-✅ No third-party dependencies
-
-✅ Windows built-in cmdlets only
-
-✅ Portable single PowerShell script
-
-✅ Administrator detection
-
-✅ CSV Export
-
-✅ JSON Export
-
-✅ TXT Export
-
-✅ Professional HTML Report
-
-✅ SHA-256 Hash Verification
-
-✅ Chain of Custody Manifest
-
-✅ Timeline Generation
-
-✅ Error-isolated collectors
-
-✅ Offline Compatible
+- 🔍 Digital Forensics
+- 🚨 Incident Response
+- 🛡️ Security Auditing
+- 💻 Malware Investigations
+- 🧑‍💻 SOC Analysts
+- 🏢 Enterprise IR Teams
+- 🎓 Learning Windows Internals
 
 ---
 
-# 📦 What the Toolkit Collects
+# Features
 
-| Category              | Artifacts                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| 🖥 System Information | OS, BIOS, Hardware, CPU, Memory, Disk Information, BitLocker, Secure Boot, TPM, Time Zone |
-| 👤 User Accounts      | Local Users, User Profiles                                                                |
-| 📜 Event Logs         | Security, System, Application summaries, important Event IDs                              |
-| 🛡 Security           | Windows Defender, Firewall Profiles                                                       |
-| 📦 Installed Software | Registry-based uninstall inventory (64-bit, WOW6432Node, Per-user)                        |
-| ⚙ Services            | Service configuration, executable path, service account, startup type                     |
-| 🔄 Persistence        | Startup folders, Run Keys, RunOnce Keys, Scheduled Tasks                                  |
-| 🔌 USB History        | USBSTOR devices, USB Enumeration                                                          |
-| 🚗 Drivers            | Installed Signed Drivers with signer information                                          |
-| 🌐 Network            | IP Configuration, DNS Cache, ARP Table, Routes, TCP Connections, Listening Ports          |
-| 🩹 Windows Updates    | Installed Hotfixes and Updates                                                            |
-| 👣 User Activity      | UserAssist (Decoded), RecentDocs                                                          |
-| 📅 Timeline           | Unified chronological forensic timeline                                                   |
+## System Information
+
+- Computer Information
+- Windows Version
+- Installation Date
+- Boot Time
+- Time Zone
+- Logged-in Users
+- Local Users
+- Groups
+- Environment Variables
 
 ---
 
-# 🧠 Why Use This Toolkit?
+## Event Log Collection
 
-Unlike many forensic scripts that terminate after a single error,
+Collects important Windows Event Logs including:
 
-**every collector is completely isolated.**
+- Security
+- System
+- Application
+- PowerShell
+- Windows Defender
+- Terminal Services
+- WMI Activity
+- Task Scheduler
+- AppLocker
+- Firewall
+- Operational Logs
 
-```text
-Collector
-     │
-     ├── try
-     │      Collect Evidence
-     │
-     └── catch
-            Log Error
-            Continue Next Collector
+---
+
+## Process Analysis
+
+- Running Processes
+- Parent/Child Relationships
+- Services
+- Drivers
+- Loaded Modules
+- Scheduled Tasks
+- Startup Entries
+- Autoruns
+- Running Command Lines
+
+---
+
+## User Activity
+
+- Recent Files
+- Recent Executables
+- Prefetch Files
+- Jump Lists
+- PowerShell History
+- Clipboard
+- Downloads
+- Desktop
+- Documents
+
+---
+
+## Registry Collection
+
+Collects forensic registry artifacts including:
+
+- Run Keys
+- RunOnce
+- Services
+- USB Devices
+- Mounted Devices
+- Installed Software
+- UserAssist
+- Explorer Artifacts
+- Network Profiles
+- MRUs
+
+---
+
+## Network Evidence
+
+- Active Connections
+- Listening Ports
+- ARP Cache
+- DNS Cache
+- Routing Table
+- Network Interfaces
+- Wi-Fi Profiles
+- Shares
+- SMB Sessions
+
+---
+
+## File System Analysis
+
+- Hidden Files
+- Suspicious Executables
+- Alternate Data Streams (ADS)
+- Timestomp Detection
+- Recently Modified Files
+- Large Files
+- Temp Files
+- Startup Folders
+- Recycle Bin
+
+---
+
+## NTFS Collection
+
+Current Version includes:
+
+- NTFS Metadata
+- Volume Information
+- MFT Enumeration
+- File Reference Data
+- File Timestamps
+- Security Information
+
+Supports collecting up to **1000 MFT records per volume**.
+
+---
+
+## Windows Artifacts
+
+- Prefetch
+- Event Logs
+- Registry Hives
+- Browser Artifacts
+- LNK Files
+- Scheduled Tasks
+- Services
+- Windows Defender Logs
+- Hosts File
+- DNS Cache
+
+---
+
+## Timeline Generation
+
+Automatically generates forensic timelines using collected evidence.
+
+Timeline includes:
+
+- File Activity
+- Registry Activity
+- Event Logs
+- User Activity
+- System Events
+
+---
+
+## Evidence Integrity
+
+- SHA256 Hashes
+- Read-only Collection
+- Timestamp Preservation
+- Structured Output
+- Chain-of-Custody Friendly
+
+---
+
+# Output Structure
+
+```
+Evidence/
+│
+├── System/
+├── EventLogs/
+├── Registry/
+├── Network/
+├── Processes/
+├── Services/
+├── Drivers/
+├── FileSystem/
+├── Timeline/
+├── NTFS/
+├── Browser/
+├── Users/
+├── Logs/
+├── Hashes/
+└── Report/
 ```
 
-One failed artifact **never** stops the remainder of the acquisition.
-
 ---
 
-# 📋 Requirements
+# Screenshots
 
-* Windows PowerShell **5.1**
-* Windows 10 / Windows 11
-* Windows Server 2016+
-* No Internet Required
-* No External Modules
-* Standard User Supported
-* Administrator Recommended
-
----
-
-# 🚀 Installation
-
-No installation is required.
-
-Simply download the script:
-
-```text
-Windows-Forensic-Toolkit.ps1
+```
+Coming Soon
 ```
 
-That's it.
+---
+
+# Requirements
+
+- Windows 10
+- Windows 11
+- Windows Server
+- PowerShell 5.1+
+- Administrator Privileges (Recommended)
 
 ---
 
-# ▶ Usage
+# Usage
 
-## Default Collection
+Clone the repository
+
+```powershell
+git clone https://github.com/USERNAME/Windows-Forensic-Toolkit.git
+```
+
+Navigate to the folder
+
+```powershell
+cd Windows-Forensic-Toolkit
+```
+
+Allow execution (Current Session)
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+Run the toolkit
 
 ```powershell
 .\Windows-Forensic-Toolkit.ps1
 ```
 
-Output is automatically created on the Desktop.
+---
+
+# Evidence Collection Philosophy
+
+This toolkit is designed to perform **read-only forensic acquisition** wherever possible.
+
+It **does not intentionally modify forensic artifacts**, making it suitable for triage and incident response investigations.
 
 ---
 
-## Specify Output Folder
+# Performance
 
-```powershell
-.\Windows-Forensic-Toolkit.ps1 `
--OutputPath C:\Evidence\Case-2026-014
+Typical collection time:
+
+| System | Approx Time |
+|---------|-------------|
+| SSD | 2–6 minutes |
+| HDD | 5–15 minutes |
+
+Depends on:
+
+- Event Log Size
+- Number of Files
+- Number of Users
+- Installed Software
+- Disk Capacity
+
+---
+
+# Version
+
+Current Release
+
+```
+v1.4.0
 ```
 
----
+Highlights
 
-## Increase Event Collection
-
-```powershell
-.\Windows-Forensic-Toolkit.ps1 `
--MaxEventLogEntries 1000
-```
-
----
-
-## Disable ZIP Creation
-
-```powershell
-.\Windows-Forensic-Toolkit.ps1 `
--SkipZip
-```
+- Increased MFT Collection
+- ADS Detection
+- Timestomp Detection
+- Recent Executable Hunting
+- Improved File Collection
+- Performance Improvements
+- Bug Fixes
 
 ---
 
-## Full Example
+# Roadmap
 
-```powershell
-.\Windows-Forensic-Toolkit.ps1 `
--OutputPath D:\Evidence `
--MaxEventLogEntries 1000 `
--SkipZip `
--Verbose
-```
+Future versions may include:
 
----
-
-# 🔐 Execution Policy
-
-If PowerShell blocks local scripts:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
-.\Windows-Forensic-Toolkit.ps1
-```
-
-No permanent execution policy changes are made.
+- Full $MFT Parser
+- USN Journal Parser
+- $LogFile Parser
+- ShimCache Parser
+- Amcache Parser
+- BAM/DAM Parser
+- SRUM Database Parser
+- Jump List Parser
+- Windows Timeline Parser
+- Browser SQLite Parser
+- HTML Report
+- IOC Correlation
+- Sigma Detection
+- MITRE ATT&CK Mapping
+- YARA Scanning
+- Memory Acquisition Support
 
 ---
 
-# ⚙ Parameters
+# Disclaimer
 
-| Parameter            | Default                                       | Description                            |
-| -------------------- | --------------------------------------------- | -------------------------------------- |
-| `OutputPath`         | Desktop\ForensicReport_<Computer>_<Timestamp> | Output folder                          |
-| `MaxEventLogEntries` | 500                                           | Events collected per channel (10-5000) |
-| `SkipZip`            | False                                         | Skip ZIP archive generation            |
+This project is intended **only for defensive security, digital forensics, incident response, and security auditing**.
+
+The author is **not responsible** for misuse or illegal activities involving this software.
 
 ---
 
-# 📁 Output Structure
+# Contributing
 
-```text
-ForensicReport_<Computer>_<Timestamp>
-│
-├── CSV
-│     SystemInfo.csv
-│     Services.csv
-│     Software.csv
-│     Timeline.csv
-│     ...
-│
-├── JSON
-│     ...
-│
-├── TXT
-│     ...
-│
-├── HTML
-│     ForensicReport.html
-│
-├── Hashes
-│     file_hashes.csv
-│     file_hashes.json
-│
-├── collection.log
-│
-└── manifest.json
-```
+Contributions are welcome.
 
-If ZIP creation is enabled:
-
-```text
-ForensicReport_<Timestamp>.zip
-```
-
-is created automatically beside the evidence folder.
+If you find bugs or have feature requests, feel free to open an Issue or submit a Pull Request.
 
 ---
 
-# 📊 Report Formats
+# License
 
-Every collected artifact is exported into multiple formats.
-
-| Format | Purpose                           |
-| ------ | --------------------------------- |
-| CSV    | Excel Analysis                    |
-| JSON   | Automation / SIEM Import          |
-| TXT    | Human-readable Raw Output         |
-| HTML   | Professional Investigation Report |
+MIT License
 
 ---
 
-# 🧾 HTML Report
+# Author
 
-The generated HTML report includes:
+**MR. X Gaming**
 
-* Professional dashboard
-* Evidence summary
-* Host information
-* Security status
-* Installed software
-* Services
-* Persistence
-* Network
-* Timeline
-* User Activity
-* Driver Inventory
-* USB History
-* Event Logs
-* Administrator Warning Banner
-
-Open:
-
-```text
-HTML\
-    ForensicReport.html
-```
-
-inside any modern browser.
+Digital Forensics • Incident Response • Windows Internals • PowerShell
 
 ---
 
-# 📅 Timeline Generation
+<p align="center">
 
-The toolkit automatically merges artifacts into a single chronological timeline.
+⭐ If you find this project useful, consider giving it a star!
 
-Sources include:
-
-* Security Events
-* System Events
-* Software Install Dates
-* UserAssist Last Run
-* Scheduled Task Last Run
-* Windows Updates
-
-Ideal for answering:
-
-> **"What happened?"**
-
-and
-
-> **"When did it happen?"**
-
----
-
-# 🔒 Evidence Integrity
-
-Every generated file receives a SHA-256 hash.
-
-```text
-SHA-256
-
-CSV Files
-JSON Files
-TXT Files
-HTML Report
-Manifest
-Logs
-```
-
-Verification files:
-
-```text
-Hashes/
-    file_hashes.csv
-    file_hashes.json
-```
-
----
-
-# ⛓ Chain of Custody
-
-The toolkit automatically generates
-
-```text
-manifest.json
-```
-
-including:
-
-* Hostname
-* Username
-* Collection Time
-* UTC Timestamp
-* Tool Version
-* File Inventory
-* SHA-256 Hashes
-
-allowing later verification that no evidence has been altered.
-
----
-
-# 🛡 Read-Only Design
-
-The toolkit **does not**:
-
-❌ Modify Registry
-
-❌ Delete Files
-
-❌ Stop Services
-
-❌ Change Event Logs
-
-❌ Disable Security Features
-
-❌ Install Software
-
-The only created artifacts are:
-
-* Output Folder
-* Log File
-* Report Files
-* Optional ZIP Archive
-
----
-
-# ⚠ Current Limitations
-
-This is a **triage** toolkit.
-
-It **does not** acquire:
-
-* RAM Images
-* Full Disk Images
-* Browser Databases
-* Deleted Files
-* MFT Parsing
-* Prefetch Parsing
-* Registry Hive Extraction
-* Volume Shadow Copies
-
-For deeper investigations, combine this toolkit with:
-
-* KAPE
-* Memory acquisition tools
-* Browser artifact parsers
-* Disk imaging solutions
-
----
-
-# 👨‍💻 Recommended Privileges
-
-| Privilege     | Coverage                                                                   |
-| ------------- | -------------------------------------------------------------------------- |
-| Standard User | Most collectors                                                            |
-| Administrator | Full artifact coverage including Security Log, BitLocker, TPM, Secure Boot |
-
-If the toolkit is not elevated, the HTML report clearly displays a warning banner.
-
----
-
-# 📈 Workflow
-
-```text
-Start
-
-   │
-
-Collect System
-
-   │
-
-Collect Users
-
-   │
-
-Collect Security
-
-   │
-
-Collect Services
-
-   │
-
-Collect Software
-
-   │
-
-Collect Persistence
-
-   │
-
-Collect Network
-
-   │
-
-Collect Drivers
-
-   │
-
-Collect Event Logs
-
-   │
-
-Build Timeline
-
-   │
-
-Export CSV
-
-   │
-
-Export JSON
-
-   │
-
-Export TXT
-
-   │
-
-Generate HTML
-
-   │
-
-Generate SHA-256 Hashes
-
-   │
-
-Generate Manifest
-
-   │
-
-ZIP Evidence
-
-   │
-
-Complete
-```
-
----
-
-# 🎯 Ideal Use Cases
-
-* Incident Response
-* Malware Investigation
-* Security Audits
-* Insider Threat Investigation
-* Windows Triage
-* SOC Operations
-* Blue Team Operations
-* DFIR Labs
-* Penetration Test Evidence Collection
-* Compliance Auditing
-
----
-
-# 🤝 Contributing
-
-Contributions, feature requests, bug reports, and improvements are welcome.
-
-Feel free to fork the repository and submit a pull request.
-
----
-
-# ⭐ Support
-
-If this project helps your investigations,
-
-please consider giving the repository a ⭐ on GitHub.
-
-It helps others discover the project.
-
----
-
-<div align="center">
-
-## 🛡 Windows Forensic Triage & Evidence Collection Toolkit
-
-**Professional • Portable • Read-Only • Offline • Evidence Focused**
-
-Made with ❤️ for DFIR, SOC, Incident Response, and Windows Security Professionals.
-
-</div>
+</p>
