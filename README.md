@@ -6,7 +6,7 @@
 ![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)
 ![DFIR](https://img.shields.io/badge/DFIR-Incident%20Response-red?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-v1.4.0-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 
 </p>
 
