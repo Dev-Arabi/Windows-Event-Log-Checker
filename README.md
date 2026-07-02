@@ -58,7 +58,7 @@ It automates the collection of volatile and non-volatile artifacts, generates in
 ## Clone the repository
 
 ```powershell
-git clone https://github.com/YOUR_USERNAME/Windows-Forensic-Toolkit.git
+git clone https://github.com/Dev-Arabi/Windows-Event-Log-Checker.git
 ```
 
 ## Navigate to the project
